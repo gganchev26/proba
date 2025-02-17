@@ -6,16 +6,23 @@ namespace proba
         
         static void Main(string[] args)
         {
-            Func<int, int, int> sum = Sum;
+            Func<string, string, string> sum = Sum;
 
-            Console.WriteLine(Sum(12, 18));
+            Console.WriteLine(Sum("Hello ", "World"));
         }
-        static int Sum(int x, int y) => x + y;
+        static string Sum(string x, string y) => x + y;
 
-        static int AlternativeSum(int x, int y)
+        static string AlternativeSum(string x, string y)
         {
             return x + y;
         }
+
+        private static void MethodA(string msg)
+        {
+            
+        }
+
+
     }
 }
 
