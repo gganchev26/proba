@@ -3,25 +3,19 @@ namespace proba
 {
     internal class Program
     {
-        public delegate TResult Myfunc<TInput, TResult>(TInput input);
-        public static void Main(string[] args)
+        
+        static void Main(string[] args)
         {
-            //Delegate with lamba expression string as input and int as output
-             
-            Myfunc<string, int> stringToInt = input => input.Length;
+            Func<int, int, int> sum = Sum;
 
-            string str = "Hello, world!";
-            int result = stringToInt(str);
-
-            Console.WriteLine($"Length of '{str}' is {result}");
+            Console.WriteLine(Sum(12, 18));
         }
+        static int Sum(int x, int y) => x + y;
 
-        private static void MethodA(string msg)
+        static int AlternativeSum(int x, int y)
         {
-            
+            return x + y;
         }
-
-
     }
 }
 
